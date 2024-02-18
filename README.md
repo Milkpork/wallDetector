@@ -1,0 +1,12 @@
+- requments
+  - python3.8.6
+  - django==4.1.4
+  - opencv-python==4.6.0.66
+  - numpy==1.24.0
+  - pillow==9.3.0
+  - torch==2020.12.3
+  - torchvision==0.14.1
+  - mediapipe==0.9.0.1
+
+- how to run
+  - python.exe -W ignore manage.py runserver 8000

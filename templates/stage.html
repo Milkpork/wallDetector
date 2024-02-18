@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .stage-container {
+            width: 200px;
+            height: 225px;
+            background-color: #bfa;
+            margin: 0 auto;
+        }
+        .stage-container .pic-wapper{
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+        .stage-container .send-btn{
+            display: block;
+            margin:0 auto;
+        }
+    </style>
+</head>
+<body>
+<div class="stage-container">
+    <div class="pic-wapper"></div>
+    <input class="send-btn" type="button" value="send" onclick="sendMessage()">
+</div>
+<script>
+    socket = new WebSocket("ws://127.0.0.1:8000/room/");
+
+    socket.onmessage = function (event) {
+        console.log(event.data)
+    }
+
+    function sendMessage() {
+        socket.send("nhao");
+    }
+</script>
+</body>
+</html>
